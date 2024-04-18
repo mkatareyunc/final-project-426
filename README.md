@@ -3,4 +3,4 @@ COMP 426 Final Project - Manav Katarey, Pauline Dang, Morgan Kennedy, Kevin Gome
 
 
 Search popular locales and see other popular destinations (preset)
-User-speciic - Keeping list of favorited locations and (filter by location and see adjacent destinations)
+\nUser-speciic - Keeping list of favorited locations and (filter by location and see adjacent destinations - save data)
