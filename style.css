@@ -1,0 +1,39 @@
+body {
+    background-color: navy;
+    margin: 0px;
+}
+
+#painting
+{
+    height: 700px;
+    background-image: url(pexels-freestockpro-1008155.jpeg);
+    background-size: cover;
+} 
+
+#login{
+    display: inline-block;
+    background-color: white;
+    margin: 15% 35% 25% 35%;
+    width: 30%;
+    height: 70%;
+    align-items: center;
+    border-radius: 10px;
+}
+
+input [type=text] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+#labels{
+    padding: 30% 20% 30% 26%;
+}
+
+button{
+    background-color: lightblue;
+    margin: 10% 30% 10% 33%;
+    border-radius: 5px;
+    
+}
