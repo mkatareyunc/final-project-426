@@ -5,19 +5,20 @@ body {
 
 #painting
 {
-    height: 700px;
     background-image: url(pexels-freestockpro-1008155.jpeg);
     background-size: cover;
+    height: 700px;
 } 
 
-#login{
-    display: inline-block;
+.login{
     background-color: white;
     margin: 15% 35% 25% 35%;
     width: 30%;
     height: 70%;
-    align-items: center;
     border-radius: 10px;
+    display: inline;
+    align-items: center;
+    justify-content: center;
 }
 
 input [type=text] {
@@ -28,12 +29,11 @@ input [type=text] {
 }
 
 #labels{
-    padding: 30% 20% 30% 26%;
+    align-items: center;
 }
 
 button{
     background-color: lightblue;
-    margin: 10% 30% 10% 33%;
     border-radius: 5px;
     
 }

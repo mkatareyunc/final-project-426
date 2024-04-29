@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#container {
+    height: 100%;
+    background-color: navy;
+}
+
+#sidebar {
+    background-color: white;
+    width: 25%;
+    height: 100%;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
+    width: 40%;
+}
+
+#navigation {
+    padding-top: 10%;
+    text-align: center;
+    text-align: center;
+    color: navy;
+    font-size: 20px;
+}
