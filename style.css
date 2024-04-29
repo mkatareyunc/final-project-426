@@ -5,7 +5,7 @@ body {
 
 #painting
 {
-    height: 700px;
+    height: 600px;
     background-image: url(pexels-freestockpro-1008155.jpeg);
     background-size: cover;
 } 
@@ -28,12 +28,91 @@ input [type=text] {
 }
 
 #labels{
-    padding: 30% 20% 30% 26%;
+    padding: 30% 20% 30% 23%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
 }
 
 button{
     background-color: lightblue;
     margin: 10% 30% 10% 33%;
     border-radius: 5px;
-    
+    cursor: pointer;
+    padding: 10px 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+.sides{
+    display: flex;
+    flex-direction: row;
+    object-fit: cover;
+}
+.leftside{
+    display: inline-block;
+    height: 780px;
+    width: 690px;
+    background-image: url(paris.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.rightside{
+    display: inline-block;
+    height: 690px;
+    width: 690px;
+    background-color: navy;
+}
+
+#topbox{
+    display: inline-block;
+    height: 200px;
+    width: 650px;
+    background-color: white;
+    margin-left: 45px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+#middlebox{
+    display: inline-block;
+    height: 200px;
+    width: 650px;
+    background-color: white;
+    margin-left: 45px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+#bottombox{
+    display: inline-block;
+    height: 200px;
+    width: 650px;
+    background-color: white;
+    margin-left: 45px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+#heart {
+    padding: 2%;
+    position: absolute;
+    width: 5%;
+}
+
+#gear {
+    padding: 2%;
+    position: fixed;
+    bottom: 0;
+    width: 5%;
+}
+
+select{
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 25%;
+    padding: 2%;
+    font-size: 100%;
+    font-family: serif;
+    width: 400px;
 }
