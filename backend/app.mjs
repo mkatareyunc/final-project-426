@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import axios from 'axios';
-import { db } from 'backend/db.mjs';
+import { db } from './db.mjs';
 
 
 const app = express();
