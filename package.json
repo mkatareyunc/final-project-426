@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "pg": "^8.11.5"
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "pg": "^8.11.5",
+    "sqlite-async": "^1.2.0"
   }
 }
