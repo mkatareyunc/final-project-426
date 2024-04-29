@@ -38,9 +38,16 @@ button{
     margin: auto;
     border-radius: 5px;
     cursor: pointer;
-    padding: 10px 15px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 15px;
+}
+
+#loginButton {
+    text-align: center;
+}
+
+#createButton {
+    text-align: center;
 }
 
 .sides{
