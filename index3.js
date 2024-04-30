@@ -1,8 +1,8 @@
 // Function to fetch user's favorite attractions
-async function fetchFavorites() {
+async function fetchFavorites(userId) {
     try {
         // Fetch user's favorite attractions from the backend
-        const response = await fetch('http://localhost:3000/user/favorites', {
+        const response = await fetch(`http://localhost:3000/favorites?userId=${userId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -26,10 +26,13 @@ function populateFavorites(favorites) {
     favorites.forEach((favorite, index) => {
         const card = document.getElementById(`favCard${index + 1}`);
         if (card) {
-            const button = card.querySelector('button');
-            if (button) {
-                button.innerHTML = `<a href="page2.html">${favorite.attraction_name}</a>`;
-            }
+            card.innerHTML = `
+            <h5>${favorite.activityName}</h5>
+            <br>
+            <p>Location: ${favorite.location}</p>
+            <br>
+            <img src="${favorite.city_pic}" alt="City Image" style="width:60%">
+            `
         }
     });
 }
@@ -38,6 +41,5 @@ function populateFavorites(favorites) {
 // Call the functions when the page loads
 window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('username').innerText = localStorage.getItem('username') + "'s Favorites";
-    fetchFavorites();
-    fetchUsername();
+    fetchFavorites(localStorage.getItem('userId'));
 });

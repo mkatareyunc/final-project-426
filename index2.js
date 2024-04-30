@@ -61,6 +61,8 @@ document.addEventListener("DOMContentLoaded", async function() {
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
                         let activity = filteredData[i];
+                        activity.location = city;
+                        activity.city_pic = "cities/barecelona.jpg";
     
                         // Create elements for the activity
                         let activityDiv = document.createElement("div");
@@ -181,7 +183,9 @@ document.addEventListener("DOMContentLoaded", async function() {
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
                         let activity = filteredData[i];
-    
+                        activity.location = city;
+                        activity.city_pic = "cities/berlin.jpg";
+
                         // Create elements for the activity
                         let activityDiv = document.createElement("div");
                         let activityName = document.createElement("h1");
@@ -295,7 +299,9 @@ document.addEventListener("DOMContentLoaded", async function() {
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
                         let activity = filteredData[i];
-    
+                        activity.location = city;
+                        activity.city_pic = "cities/dallas.jpg";
+
                         // Create elements for the activity
                         let activityDiv = document.createElement("div");
                         let activityName = document.createElement("h1");
@@ -410,7 +416,9 @@ document.addEventListener("DOMContentLoaded", async function() {
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
                         let activity = filteredData[i];
-    
+                        activity.location = city;
+                        activity.city_pic = "cities/london.jpg";
+
                         // Create elements for the activity
                         let activityDiv = document.createElement("div");
                         let activityName = document.createElement("h1");
@@ -525,7 +533,9 @@ document.addEventListener("DOMContentLoaded", async function() {
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
                         let activity = filteredData[i];
-    
+                        activity.location = city;
+                        activity.city_pic = "cities/newyork.jpg";
+
                         // Create elements for the activity
                         let activityDiv = document.createElement("div");
                         let activityName = document.createElement("h1");
@@ -640,7 +650,9 @@ document.addEventListener("DOMContentLoaded", async function() {
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
                         let activity = filteredData[i];
-    
+                        activity.location = city;
+                        activity.city_pic = "cities/paris.jpg";
+
                         // Create elements for the activity
                         let activityDiv = document.createElement("div");
                         let activityName = document.createElement("h1");
@@ -755,7 +767,9 @@ document.addEventListener("DOMContentLoaded", async function() {
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
                         let activity = filteredData[i];
-    
+                        activity.location = city;
+                        activity.city_pic = "cities/sanfrancisco.jpg";
+
                         // Create elements for the activity
                         let activityDiv = document.createElement("div");
                         let activityName = document.createElement("h1");
@@ -825,7 +839,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     });       
 });
 
-async function addToFavorites(attraction) {
+async function addToFavorites(attraction, event) {
     try {
         let userId = localStorage.getItem('userId');
         // Send a POST request to your backend to add the attraction to favorites
@@ -835,16 +849,19 @@ async function addToFavorites(attraction) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                latitude: attraction.latitude,
-                ongitude: attraction.longitude, 
+                location: attraction.location, 
                 activityId: attraction.id,
-                userId: userId 
+                userId: userId ,
+                activityName: attraction.name,
+                city_pic: attraction.city_pic
             })
         });
         
         // Check if the request was successful
         if (response.ok) {
             console.log('Attraction added to favorites successfully.');
+            event.preventDefault();
+
         } else {
             console.error('Error adding attraction to favorites:', response.statusText);
         }

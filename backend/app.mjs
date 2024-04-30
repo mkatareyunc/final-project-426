@@ -35,8 +35,9 @@ app.get('/tours', async(req, res) => {
 app.post('/favorites', async(req, res) => {
     let userId = req.body.userId;
     let activityId = req.body.activityId;
-    let latitude = req.body.latitude;
-    let longitude = req.body.longitude;
+    let location = req.body.location;
+    let activityName = req.body.activityName;
+    let city_pic = req.body.city_pic;
 
     try {
         // Check if the activity already exists for the user
@@ -50,7 +51,7 @@ app.post('/favorites', async(req, res) => {
         if(favLength.length >= 6){
             return res.status(400).send('User already has maximum number of favorites');
         }
-        await db.run('INSERT INTO user_favorites (user_id, latitude, longitude, activity_id) VALUES (?, ?, ?, ?)', userId, latitude, longitude, activityId);
+        await db.run('INSERT INTO user_favorites (user_id, location, activity_id, activityName, city_pic) VALUES (?, ?, ?, ?, ?)', userId, location, activityId, activityName, city_pic);
 
         res.status(201).send('Attraction associated with user successfully');
     } catch (error) {
