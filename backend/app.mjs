@@ -34,17 +34,23 @@ app.get('/tours', async(req, res) => {
 
 app.post('/favorites', async(req, res) => {
     let userId = req.body.userId;
-    let location = req.body.location;
+    let activityId = req.body.activityId;
     let latitude = req.body.latitude;
     let longitude = req.body.longitude;
 
     try {
+        // Check if the activity already exists for the user
+        const existingActivity = await db.get('SELECT * FROM user_favorites WHERE user_id = ? AND activity_id = ?', userId, activityId);
+        if (existingActivity) {
+            return res.status(400).send('Activity already exists in favorites');
+        }
+
         // Insert association data into the database
         let favLength = await db.all('SELECT * FROM user_favorites WHERE user_id = ?', userId);
         if(favLength.length >= 6){
-            return;
+            return res.status(400).send('User already has maximum number of favorites');
         }
-        await db.run('INSERT INTO user_favorites (user_id, location, latitude, longitude) VALUES (?, ?, ?, ?)', userId, location, latitude, longitude);
+        await db.run('INSERT INTO user_favorites (user_id, latitude, longitude, activity_id) VALUES (?, ?, ?, ?)', userId, latitude, longitude, activityId);
 
         res.status(201).send('Attraction associated with user successfully');
     } catch (error) {
@@ -120,7 +126,7 @@ app.post('/login', async (req, res) => {
             return res.status(401).send('Invalid username or password');
         }
 
-        res.status(200).json({userId: user.id});
+        res.status(200).json({userId: user.id, username: user.username});
     } catch (error) {
         console.error('Error during login:', error);
         res.status(500).send('Internal Server Error');

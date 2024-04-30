@@ -29,6 +29,7 @@ loginBtn.addEventListener("click", () => {
     .then(data => {
         //store userid in local storage
         localStorage.setItem('userId', data.userId);
+        localStorage.setItem('username', data.username);
     })
     .catch(error => {
         console.error("Error:", error);

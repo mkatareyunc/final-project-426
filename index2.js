@@ -114,6 +114,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -177,6 +181,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -240,6 +248,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -303,6 +315,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -366,6 +382,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -429,6 +449,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -459,7 +483,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                 let response = await fetch('http://localhost:3000/tours?latitude=37.810980&longitude=-122.483716&radius=5');
                 let jsonData = await response.json();
     
-                // Filter data to include only objects with name, rating, and bookingLink
+                // Filter data to include only objects with name and bookingLink
                 let filteredData = jsonData.data.filter(activity => 
                     activity.name && activity.bookingLink
                 );
@@ -492,6 +516,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -533,9 +561,9 @@ async function addToFavorites(attraction) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                attraction_location: attraction.location,
-                attraction_latitude: attraction.latitude,
-                attraction_longitude: attraction.longitude, 
+                latitude: attraction.latitude,
+                ongitude: attraction.longitude, 
+                activityId: attraction.id,
                 userId: userId 
             })
         });
