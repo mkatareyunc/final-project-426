@@ -513,5 +513,8 @@ document.addEventListener("DOMContentLoaded", async function() {
                 console.error("Error fetching data:", error);
             }
         }
+        else if(city === "Home"){
+            this.location.reload();
+        }
     });       
 });
