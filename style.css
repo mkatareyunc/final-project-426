@@ -1,13 +1,14 @@
 body {
-    background-color: navy;
+    background-color: rgb(255,156,91);
     margin: 0px;
 }
 
 #painting
 {
     height: 600px;
-    background-image: url(pexels-freestockpro-1008155.jpeg);
+    background-image: url(default.jpg);
     background-size: cover;
+    background-position: bottom;
 } 
 
 #login{
@@ -71,7 +72,7 @@ button{
     display: inline-block;
     height: 690px;
     width: 690px;
-    background-color: navy;
+    background-color: rgb(255,156,91);
 }
 
 #topbox{

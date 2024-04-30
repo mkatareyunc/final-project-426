@@ -5,7 +5,7 @@ html, body {
 
 .container {
     height: 100%;
-    background-color: navy;
+    background-color: rgb(255,156,91);
     display: flex;
     flex-direction: row;
 }
@@ -18,7 +18,7 @@ html, body {
 }
 
 .right {
-    background-color: navy;
+    background-color: rgb(255,156,91);
     width: 75%;
     height: 100%;
     display: inline-block;

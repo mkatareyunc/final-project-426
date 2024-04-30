@@ -69,18 +69,6 @@ document.addEventListener("DOMContentLoaded", async function() {
                         let heartIcon = document.createElement("img");
                         let picContainer = document.createElement("div");
                         
-                        
-                        // .picBox1{
-                        //     width: 170px;
-                        //     height: 170px;
-                        //     margin: 2.25%;
-                        //     border-radius: 10px;
-                        //     background-image: url(eat.jpg);
-                        //     background-size: cover;
-                        //     background-repeat: no-repeat;
-                        //     background-position: center;
-                        // }
-
                         picContainer.style.height = '100%';
                         picContainer.style.width = '200px'
                         activityDiv.style.height = '100%';
@@ -89,10 +77,8 @@ document.addEventListener("DOMContentLoaded", async function() {
                         // Set content for the elements
                         activityName.textContent = activity.name;
 
-                        // Add Pictures
-                        
-
-
+                        activityBookingLink.style.textDecoration = 'none';
+                        activityBookingLink.style.color= 'grey';
 
                         activityBookingLink.textContent = "Book Activity Now!";
                         activityBookingLink.href = activity.bookingLink || "#";
@@ -105,8 +91,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
                     
-                        activityBookingLink.style.textDecoration = 'none';
-                        activityBookingLink.style.color= 'grey';
+                        
     
                         
                         heartIcon.addEventListener("click", () => {
@@ -118,9 +103,6 @@ document.addEventListener("DOMContentLoaded", async function() {
                         activityDiv.appendChild(activityName);
                         activityDiv.appendChild(activityBookingLink);
 
-                        
-
-                       // activityDiv.style.textAlign = 'center';
     
                         // Determine which div to append the activity to
                         if (i === 0) {
@@ -137,9 +119,6 @@ document.addEventListener("DOMContentLoaded", async function() {
                             bottom_div.appendChild(activityDiv);
                         }
                     }
-                    // top_div.style.textAlign = 'center';
-                    // mid_div.style.textAlign = 'center';
-                    // bottom_div.style.textAlign = 'center';
 
                     // Display background image for Barcelona
                     leftside.style.backgroundImage = "url('cities/barecelona.jpg')";
@@ -167,6 +146,37 @@ document.addEventListener("DOMContentLoaded", async function() {
                     top_div.innerHTML = "";
                     mid_div.innerHTML = "";
                     bottom_div.innerHTML = "";
+
+                    let pic1 = document.createElement("div");
+                    let pic2 = document.createElement("div");
+                    let pic3 = document.createElement("div");
+
+                    pic1.style.height = '170px';
+                        pic1.style.width = '170px';
+                        pic1.style.margin = '15px';
+                        pic1.style.borderRadius = '10px';
+                        pic1.style.backgroundImage = "url(activities/berlin/BerlinBikeTour.jpg)";
+                        pic1.style.backgroundSize = 'cover';
+                        pic1.style.backgroundRepeat = 'no-repeats';
+                        pic1.style.backgroundPosition = 'center';
+
+                        pic2.style.height = '170px';
+                        pic2.style.width = '170px';
+                        pic2.style.margin = '15px';
+                        pic2.style.borderRadius = '10px';
+                        pic2.style.backgroundImage = "url(activities/berlin/whiteTruffel.jpg)";
+                        pic2.style.backgroundSize = 'cover';
+                        pic2.style.backgroundRepeat = 'no-repeats';
+                        pic2.style.backgroundPosition = 'center';
+
+                        pic3.style.height = '170px';
+                        pic3.style.width = '170px';
+                        pic3.style.margin = '15px';
+                        pic3.style.borderRadius = '10px';
+                        pic3.style.backgroundImage = "url(activities/berlin/highTea.jpg)";
+                        pic3.style.backgroundSize = 'cover';
+                        pic3.style.backgroundRepeat = 'no-repeats';
+                        pic3.style.backgroundPosition = 'center';
     
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
@@ -177,9 +187,20 @@ document.addEventListener("DOMContentLoaded", async function() {
                         let activityName = document.createElement("h1");
                         let activityBookingLink = document.createElement("a");
                         let heartIcon = document.createElement("img");
+                        let picContainer = document.createElement("div");
+
+                        picContainer.style.height = '100%';
+                        picContainer.style.width = '200px'
+                        activityDiv.style.height = '100%';
+                        activityDiv.style.width = '450px';
+                        activityDiv.style.textAlign = 'center';
     
                         // Set content for the elements
                         activityName.textContent = activity.name;
+
+                        activityBookingLink.style.textDecoration = 'none';
+                        activityBookingLink.style.color= 'grey';
+
                         activityBookingLink.textContent = "Book Activity Now!";
                         activityBookingLink.href = activity.bookingLink || "#";
                         heartIcon.src = "/icons/heart.png";
@@ -200,10 +221,16 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                         // Determine which div to append the activity to
                         if (i === 0) {
+                            picContainer.appendChild(pic1);
+                            top_div.appendChild(picContainer);
                             top_div.appendChild(activityDiv);
                         } else if (i === 1) {
+                            picContainer.appendChild(pic2);
+                            mid_div.appendChild(picContainer);
                             mid_div.appendChild(activityDiv);
                         } else {
+                            picContainer.appendChild(pic3);
+                            bottom_div.appendChild(picContainer);
                             bottom_div.appendChild(activityDiv);
                         }
                     }
@@ -234,6 +261,36 @@ document.addEventListener("DOMContentLoaded", async function() {
                     top_div.innerHTML = "";
                     mid_div.innerHTML = "";
                     bottom_div.innerHTML = "";
+                    let pic1 = document.createElement("div");
+                    let pic2 = document.createElement("div");
+                    let pic3 = document.createElement("div");
+
+                    pic1.style.height = '170px';
+                        pic1.style.width = '170px';
+                        pic1.style.margin = '15px';
+                        pic1.style.borderRadius = '10px';
+                        pic1.style.backgroundImage = "url(activities/dallas/Atipico.jpg)";
+                        pic1.style.backgroundSize = 'cover';
+                        pic1.style.backgroundRepeat = 'no-repeats';
+                        pic1.style.backgroundPosition = 'center';
+
+                        pic2.style.height = '170px';
+                        pic2.style.width = '170px';
+                        pic2.style.margin = '15px';
+                        pic2.style.borderRadius = '10px';
+                        pic2.style.backgroundImage = "url(activities/dallas/mapleLanding.jpg)";
+                        pic2.style.backgroundSize = 'cover';
+                        pic2.style.backgroundRepeat = 'no-repeats';
+                        pic2.style.backgroundPosition = 'center';
+
+                        pic3.style.height = '170px';
+                        pic3.style.width = '170px';
+                        pic3.style.margin = '15px';
+                        pic3.style.borderRadius = '10px';
+                        pic3.style.backgroundImage = "url(activities/dallas/sportsClubD.jpg)";
+                        pic3.style.backgroundSize = 'cover';
+                        pic3.style.backgroundRepeat = 'no-repeats';
+                        pic3.style.backgroundPosition = 'center';
     
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
@@ -244,9 +301,20 @@ document.addEventListener("DOMContentLoaded", async function() {
                         let activityName = document.createElement("h1");
                         let activityBookingLink = document.createElement("a");
                         let heartIcon = document.createElement("img");
+                        let picContainer = document.createElement("div");
+
+                        picContainer.style.height = '100%';
+                        picContainer.style.width = '200px'
+                        activityDiv.style.height = '100%';
+                        activityDiv.style.width = '450px';
+                        activityDiv.style.textAlign = 'center';
     
                         // Set content for the elements
                         activityName.textContent = activity.name;
+
+                        activityBookingLink.style.textDecoration = 'none';
+                        activityBookingLink.style.color= 'grey';
+
                         activityBookingLink.textContent = "Book Activity Now!";
                         activityBookingLink.href = activity.bookingLink || "#";
                         heartIcon.src = "/icons/heart.png";
@@ -267,10 +335,16 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                         // Determine which div to append the activity to
                         if (i === 0) {
+                            picContainer.appendChild(pic1);
+                            top_div.appendChild(picContainer);
                             top_div.appendChild(activityDiv);
                         } else if (i === 1) {
+                            picContainer.appendChild(pic2);
+                            mid_div.appendChild(picContainer);
                             mid_div.appendChild(activityDiv);
                         } else {
+                            picContainer.appendChild(pic3);
+                            bottom_div.appendChild(picContainer);
                             bottom_div.appendChild(activityDiv);
                         }
                     }
@@ -302,6 +376,37 @@ document.addEventListener("DOMContentLoaded", async function() {
                     mid_div.innerHTML = "";
                     bottom_div.innerHTML = "";
     
+                    let pic1 = document.createElement("div");
+                    let pic2 = document.createElement("div");
+                    let pic3 = document.createElement("div");
+
+                    pic1.style.height = '170px';
+                        pic1.style.width = '170px';
+                        pic1.style.margin = '15px';
+                        pic1.style.borderRadius = '10px';
+                        pic1.style.backgroundImage = "url(activities/london/bushMarket.jpg)";
+                        pic1.style.backgroundSize = 'cover';
+                        pic1.style.backgroundRepeat = 'no-repeats';
+                        pic1.style.backgroundPosition = 'center';
+
+                        pic2.style.height = '170px';
+                        pic2.style.width = '170px';
+                        pic2.style.margin = '15px';
+                        pic2.style.borderRadius = '10px';
+                        pic2.style.backgroundImage = "url(activities/london/canalBoat.jpg)";
+                        pic2.style.backgroundSize = 'cover';
+                        pic2.style.backgroundRepeat = 'no-repeats';
+                        pic2.style.backgroundPosition = 'center';
+
+                        pic3.style.height = '170px';
+                        pic3.style.width = '170px';
+                        pic3.style.margin = '15px';
+                        pic3.style.borderRadius = '10px';
+                        pic3.style.backgroundImage = "url(activities/london/Foodmarket.jpg)";
+                        pic3.style.backgroundSize = 'cover';
+                        pic3.style.backgroundRepeat = 'no-repeats';
+                        pic3.style.backgroundPosition = 'center';
+    
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
                         let activity = filteredData[i];
@@ -311,9 +416,20 @@ document.addEventListener("DOMContentLoaded", async function() {
                         let activityName = document.createElement("h1");
                         let activityBookingLink = document.createElement("a");
                         let heartIcon = document.createElement("img");
+                        let picContainer = document.createElement("div");
+
+                        picContainer.style.height = '100%';
+                        picContainer.style.width = '200px'
+                        activityDiv.style.height = '100%';
+                        activityDiv.style.width = '450px';
+                        activityDiv.style.textAlign = 'center';
     
                         // Set content for the elements
                         activityName.textContent = activity.name;
+
+                        activityBookingLink.style.textDecoration = 'none';
+                        activityBookingLink.style.color= 'grey';
+
                         activityBookingLink.textContent = "Book Activity Now!";
                         activityBookingLink.href = activity.bookingLink || "#";
                         heartIcon.src = "/icons/heart.png";
@@ -334,10 +450,16 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                         // Determine which div to append the activity to
                         if (i === 0) {
+                            picContainer.appendChild(pic1);
+                            top_div.appendChild(picContainer);
                             top_div.appendChild(activityDiv);
                         } else if (i === 1) {
+                            picContainer.appendChild(pic2);
+                            mid_div.appendChild(picContainer);
                             mid_div.appendChild(activityDiv);
                         } else {
+                            picContainer.appendChild(pic3);
+                            bottom_div.appendChild(picContainer);
                             bottom_div.appendChild(activityDiv);
                         }
                     }
@@ -352,73 +474,6 @@ document.addEventListener("DOMContentLoaded", async function() {
                 console.error("Error fetching data:", error);
             }
         }
-        else if (city === 'Dallas') {
-            try {
-                let response = await fetch('http://localhost:3000/tours?latitude=32.806993&longitude=-96.836857&radius=5');
-                let jsonData = await response.json();
-    
-                // Filter data to include only objects with name, rating, and bookingLink
-                let filteredData = jsonData.data.filter(activity => 
-                    activity.name && activity.bookingLink
-                );
-
-                // Check if filtered data is available
-                if (filteredData && filteredData.length >= 3) {
-                    // Clear previous content
-                    top_div.innerHTML = "";
-                    mid_div.innerHTML = "";
-                    bottom_div.innerHTML = "";
-    
-                    // Iterate through the first three activities and populate the divs
-                    for (let i = 0; i < 3; i++) {
-                        let activity = filteredData[i];
-    
-                        // Create elements for the activity
-                        let activityDiv = document.createElement("div");
-                        let activityName = document.createElement("h1");
-                        let activityBookingLink = document.createElement("a");
-                        let heartIcon = document.createElement("img");
-    
-                        // Set content for the elements
-                        activityName.textContent = activity.name;
-                        activityBookingLink.textContent = "Book Activity Now!";
-                        activityBookingLink.href = activity.bookingLink || "#";
-                        heartIcon.src = "/icons/heart.png";
-                        heartIcon.alt = "";
-                        heartIcon.style.width = "7%";
-                        heartIcon.style.position = "absolute";
-                        heartIcon.style.bottom = "0";
-                        heartIcon.style.right = "0";
-    
-                        heartIcon.addEventListener("click", () => {
-                            addToFavorites(activity);
-                        });
-
-                        // Append elements to activityDiv
-                        activityDiv.appendChild(heartIcon);
-                        activityDiv.appendChild(activityName);
-                        activityDiv.appendChild(activityBookingLink);
-    
-                        // Determine which div to append the activity to
-                        if (i === 0) {
-                            top_div.appendChild(activityDiv);
-                        } else if (i === 1) {
-                            mid_div.appendChild(activityDiv);
-                        } else {
-                            bottom_div.appendChild(activityDiv);
-                        }
-                    }
-
-                    // Display background image for Barcelona
-                    leftside.style.backgroundImage = "url('cities/dallas.jpg')";
-
-                } else {
-                    console.error("No data available or insufficient data.");
-                }
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        } 
         else if (city === 'New York') {
             try {
                 let response = await fetch('http://localhost:3000/tours?latitude=40.792027&longitude=-74.058204&radius=5');
@@ -436,6 +491,37 @@ document.addEventListener("DOMContentLoaded", async function() {
                     mid_div.innerHTML = "";
                     bottom_div.innerHTML = "";
     
+                    let pic1 = document.createElement("div");
+                    let pic2 = document.createElement("div");
+                    let pic3 = document.createElement("div");
+
+                    pic1.style.height = '170px';
+                        pic1.style.width = '170px';
+                        pic1.style.margin = '15px';
+                        pic1.style.borderRadius = '10px';
+                        pic1.style.backgroundImage = "url(activities/new_york/giannas.jpg)";
+                        pic1.style.backgroundSize = 'cover';
+                        pic1.style.backgroundRepeat = 'no-repeats';
+                        pic1.style.backgroundPosition = 'center';
+
+                        pic2.style.height = '170px';
+                        pic2.style.width = '170px';
+                        pic2.style.margin = '15px';
+                        pic2.style.borderRadius = '10px';
+                        pic2.style.backgroundImage = "url(activities/new_york/manchengo.jpg)";
+                        pic2.style.backgroundSize = 'cover';
+                        pic2.style.backgroundRepeat = 'no-repeats';
+                        pic2.style.backgroundPosition = 'center';
+
+                        pic3.style.height = '170px';
+                        pic3.style.width = '170px';
+                        pic3.style.margin = '15px';
+                        pic3.style.borderRadius = '10px';
+                        pic3.style.backgroundImage = "url(activities/new_york/snowGlobe.jpg)";
+                        pic3.style.backgroundSize = 'cover';
+                        pic3.style.backgroundRepeat = 'no-repeats';
+                        pic3.style.backgroundPosition = 'center';
+    
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
                         let activity = filteredData[i];
@@ -445,9 +531,20 @@ document.addEventListener("DOMContentLoaded", async function() {
                         let activityName = document.createElement("h1");
                         let activityBookingLink = document.createElement("a");
                         let heartIcon = document.createElement("img");
+                        let picContainer = document.createElement("div");
+
+                        picContainer.style.height = '100%';
+                        picContainer.style.width = '200px'
+                        activityDiv.style.height = '100%';
+                        activityDiv.style.width = '450px';
+                        activityDiv.style.textAlign = 'center';
     
                         // Set content for the elements
                         activityName.textContent = activity.name;
+
+                        activityBookingLink.style.textDecoration = 'none';
+                        activityBookingLink.style.color= 'grey';
+
                         activityBookingLink.textContent = "Book Activity Now!";
                         activityBookingLink.href = activity.bookingLink || "#";
                         heartIcon.src = "/icons/heart.png";
@@ -468,10 +565,16 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                         // Determine which div to append the activity to
                         if (i === 0) {
+                            picContainer.appendChild(pic1);
+                            top_div.appendChild(picContainer);
                             top_div.appendChild(activityDiv);
                         } else if (i === 1) {
+                            picContainer.appendChild(pic2);
+                            mid_div.appendChild(picContainer);
                             mid_div.appendChild(activityDiv);
                         } else {
+                            picContainer.appendChild(pic3);
+                            bottom_div.appendChild(picContainer);
                             bottom_div.appendChild(activityDiv);
                         }
                     }
@@ -503,6 +606,37 @@ document.addEventListener("DOMContentLoaded", async function() {
                     mid_div.innerHTML = "";
                     bottom_div.innerHTML = "";
     
+                    let pic1 = document.createElement("div");
+                    let pic2 = document.createElement("div");
+                    let pic3 = document.createElement("div");
+
+                    pic1.style.height = '170px';
+                        pic1.style.width = '170px';
+                        pic1.style.margin = '15px';
+                        pic1.style.borderRadius = '10px';
+                        pic1.style.backgroundImage = "url(activities/paris/beerBike.jpg)";
+                        pic1.style.backgroundSize = 'cover';
+                        pic1.style.backgroundRepeat = 'no-repeats';
+                        pic1.style.backgroundPosition = 'center';
+
+                        pic2.style.height = '170px';
+                        pic2.style.width = '170px';
+                        pic2.style.margin = '15px';
+                        pic2.style.borderRadius = '10px';
+                        pic2.style.backgroundImage = "url(activities/paris/bike.jpg)";
+                        pic2.style.backgroundSize = 'cover';
+                        pic2.style.backgroundRepeat = 'no-repeats';
+                        pic2.style.backgroundPosition = 'center';
+
+                        pic3.style.height = '170px';
+                        pic3.style.width = '170px';
+                        pic3.style.margin = '15px';
+                        pic3.style.borderRadius = '10px';
+                        pic3.style.backgroundImage = "url(activities/paris/defense.jpg)";
+                        pic3.style.backgroundSize = 'cover';
+                        pic3.style.backgroundRepeat = 'no-repeats';
+                        pic3.style.backgroundPosition = 'center';
+    
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
                         let activity = filteredData[i];
@@ -512,9 +646,20 @@ document.addEventListener("DOMContentLoaded", async function() {
                         let activityName = document.createElement("h1");
                         let activityBookingLink = document.createElement("a");
                         let heartIcon = document.createElement("img");
+                        let picContainer = document.createElement("div");
+
+                        picContainer.style.height = '100%';
+                        picContainer.style.width = '200px'
+                        activityDiv.style.height = '100%';
+                        activityDiv.style.width = '450px';
+                        activityDiv.style.textAlign = 'center';
     
                         // Set content for the elements
                         activityName.textContent = activity.name;
+
+                        activityBookingLink.style.textDecoration = 'none';
+                        activityBookingLink.style.color= 'grey';
+
                         activityBookingLink.textContent = "Book Activity Now!";
                         activityBookingLink.href = activity.bookingLink || "#";
                         heartIcon.src = "/icons/heart.png";
@@ -535,10 +680,16 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                         // Determine which div to append the activity to
                         if (i === 0) {
+                            picContainer.appendChild(pic1);
+                            top_div.appendChild(picContainer);
                             top_div.appendChild(activityDiv);
                         } else if (i === 1) {
+                            picContainer.appendChild(pic2);
+                            mid_div.appendChild(picContainer);
                             mid_div.appendChild(activityDiv);
                         } else {
+                            picContainer.appendChild(pic3);
+                            bottom_div.appendChild(picContainer);
                             bottom_div.appendChild(activityDiv);
                         }
                     }
@@ -570,6 +721,37 @@ document.addEventListener("DOMContentLoaded", async function() {
                     mid_div.innerHTML = "";
                     bottom_div.innerHTML = "";
     
+                    let pic1 = document.createElement("div");
+                    let pic2 = document.createElement("div");
+                    let pic3 = document.createElement("div");
+
+                    pic1.style.height = '170px';
+                        pic1.style.width = '170px';
+                        pic1.style.margin = '15px';
+                        pic1.style.borderRadius = '10px';
+                        pic1.style.backgroundImage = "url(activities/san_fransico/BBQ.jpg)";
+                        pic1.style.backgroundSize = 'cover';
+                        pic1.style.backgroundRepeat = 'no-repeats';
+                        pic1.style.backgroundPosition = 'center';
+
+                        pic2.style.height = '170px';
+                        pic2.style.width = '170px';
+                        pic2.style.margin = '15px';
+                        pic2.style.borderRadius = '10px';
+                        pic2.style.backgroundImage = "url(activities/san_fransico/greens.jpg)";
+                        pic2.style.backgroundSize = 'cover';
+                        pic2.style.backgroundRepeat = 'no-repeats';
+                        pic2.style.backgroundPosition = 'center';
+
+                        pic3.style.height = '170px';
+                        pic3.style.width = '170px';
+                        pic3.style.margin = '15px';
+                        pic3.style.borderRadius = '10px';
+                        pic3.style.backgroundImage = "url(activities/san_fransico/sessions.jpg)";
+                        pic3.style.backgroundSize = 'cover';
+                        pic3.style.backgroundRepeat = 'no-repeats';
+                        pic3.style.backgroundPosition = 'center';
+    
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
                         let activity = filteredData[i];
@@ -579,9 +761,20 @@ document.addEventListener("DOMContentLoaded", async function() {
                         let activityName = document.createElement("h1");
                         let activityBookingLink = document.createElement("a");
                         let heartIcon = document.createElement("img");
+                        let picContainer = document.createElement("div");
+
+                        picContainer.style.height = '100%';
+                        picContainer.style.width = '200px'
+                        activityDiv.style.height = '100%';
+                        activityDiv.style.width = '450px';
+                        activityDiv.style.textAlign = 'center';
     
                         // Set content for the elements
                         activityName.textContent = activity.name;
+
+                        activityBookingLink.style.textDecoration = 'none';
+                        activityBookingLink.style.color= 'grey';
+
                         activityBookingLink.textContent = "Book Activity Now!";
                         activityBookingLink.href = activity.bookingLink || "#";
                         heartIcon.src = "/icons/heart.png";
@@ -602,10 +795,16 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                         // Determine which div to append the activity to
                         if (i === 0) {
+                            picContainer.appendChild(pic1);
+                            top_div.appendChild(picContainer);
                             top_div.appendChild(activityDiv);
                         } else if (i === 1) {
+                            picContainer.appendChild(pic2);
+                            mid_div.appendChild(picContainer);
                             mid_div.appendChild(activityDiv);
                         } else {
+                            picContainer.appendChild(pic3);
+                            bottom_div.appendChild(picContainer);
                             bottom_div.appendChild(activityDiv);
                         }
                     }
