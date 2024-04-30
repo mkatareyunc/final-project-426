@@ -19,6 +19,7 @@ loginBtn.addEventListener("click", () => {
     })
     .then(response => {
         if (response.ok) {
+            window.location.assign("page2.html");
             // Redirect or show success message
             return response.json();
         } else {
@@ -51,7 +52,11 @@ createAccountBtn.addEventListener("click", () => {
         body: JSON.stringify({ username, password })
     })
     .then(response => {
-        if (response.ok) {
+        if (response.status === 400) {
+            // User already exists, show alert
+            alert("User already exists. Use login button.");
+        } else if (response.ok) {
+            window.location.assign("page2.html");
             // Redirect or show success message
             console.log("Account created successfully");
         } else {
