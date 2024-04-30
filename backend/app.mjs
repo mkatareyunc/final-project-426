@@ -15,6 +15,17 @@ const access_token = await getAccessToken();
 
 const port = 3000;
 
+app.get('/logout', async (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('Error logging out:', err);
+            res.status(500).send('Internal Server Error');
+        } else {
+            res.status(200).send('Logout successful');
+        }
+    });
+});
+
 app.get('/tours', async(req, res) => {
     try{
         let longitude = req.query.longitude;
