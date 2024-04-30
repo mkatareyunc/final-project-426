@@ -35,32 +35,78 @@ document.addEventListener("DOMContentLoaded", async function() {
                         let activityName = document.createElement("h1");
                         let activityBookingLink = document.createElement("a");
                         let heartIcon = document.createElement("img");
-    
+                        let picContainer = document.createElement("div");
+                        let pic1 = document.createElement("div");
+                        let pic2 = document.createElement("div");
+                        let pic3 = document.createElement("div");
+                        
+                        // .picBox1{
+                        //     width: 170px;
+                        //     height: 170px;
+                        //     margin: 2.25%;
+                        //     border-radius: 10px;
+                        //     background-image: url(eat.jpg);
+                        //     background-size: cover;
+                        //     background-repeat: no-repeat;
+                        //     background-position: center;
+                        // }
+
+                        picContainer.style.height = '100%';
+                        picContainer.style.width = '200px'
+                        activityDiv.style.height = '100%';
+                        activityDiv.style.width = '450px';
+                        activityDiv.style.textAlign = 'center';
                         // Set content for the elements
                         activityName.textContent = activity.name;
+
+                        // Add Pictures
+                        pic1.style.height = '170px';
+                        pic1.style.width = '170px';
+                        pic1.style.margin = '15px';
+                        pic1.style.borderRadius = '10px';
+                        // pic1.style.backgroundImage = '170px';
+                        // pic1.style.height = '170px';
+                        // pic1.style.height = '170px';
+
+
+
                         activityBookingLink.textContent = "Book Activity Now!";
                         activityBookingLink.href = activity.bookingLink || "#";
+                        
+
                         heartIcon.src = "/icons/heart.png";
                         heartIcon.alt = "";
                         heartIcon.style.width = "7%";
                         heartIcon.style.position = "absolute";
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
+
+                        activityBookingLink.style.textDecoration = 'none';
+                        activityBookingLink.style.color= 'grey';
     
+                        
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
                         activityDiv.appendChild(activityBookingLink);
+
+                       // activityDiv.style.textAlign = 'center';
     
                         // Determine which div to append the activity to
                         if (i === 0) {
+                            top_div.appendChild(picContainer);
                             top_div.appendChild(activityDiv);
                         } else if (i === 1) {
+                            mid_div.appendChild(picContainer);
                             mid_div.appendChild(activityDiv);
                         } else {
+                            bottom_div.appendChild(picContainer);
                             bottom_div.appendChild(activityDiv);
                         }
                     }
+                    // top_div.style.textAlign = 'center';
+                    // mid_div.style.textAlign = 'center';
+                    // bottom_div.style.textAlign = 'center';
 
                     // Display background image for Barcelona
                     leftside.style.backgroundImage = "url('cities/barecelona.jpg')";
