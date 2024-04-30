@@ -21,11 +21,16 @@ loginBtn.addEventListener("click", () => {
         if (response.ok) {
             window.location.assign("page2.html");
             // Redirect or show success message
-            console.log("Login successful");
+            return response.json();
         } else {
             // Handle login failure
             console.error("Login failed");
         }
+    })
+    .then(data => {
+        //store userid in local storage
+        localStorage.setItem('userId', data.userId);
+        localStorage.setItem('username', data.username);
     })
     .catch(error => {
         console.error("Error:", error);

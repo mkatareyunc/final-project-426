@@ -1,13 +1,14 @@
 body {
-    background-color: navy;
+    background-color: rgb(255,156,91);
     margin: 0px;
 }
 
 #painting
 {
     height: 600px;
-    background-image: url(pexels-freestockpro-1008155.jpeg);
+    background-image: url(default.jpg);
     background-size: cover;
+    background-position: bottom;
 } 
 
 #login{
@@ -35,12 +36,19 @@ input [type=text] {
 
 button{
     background-color: lightblue;
-    margin: 10% 30% 10% 33%;
+    margin: auto;
     border-radius: 5px;
     cursor: pointer;
-    padding: 10px 15px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 15px;
+}
+
+#loginButton {
+    text-align: center;
+}
+
+#createButton {
+    text-align: center;
 }
 
 .sides{
@@ -52,16 +60,19 @@ button{
     display: inline-block;
     height: 780px;
     width: 690px;
-    background-image: url(paris.jpg);
+    background-image: url(default.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .rightside{
     display: inline-block;
     height: 690px;
     width: 690px;
-    background-color: navy;
+    background-color: rgb(255,156,91);
 }
 
 #topbox{
@@ -72,6 +83,9 @@ button{
     margin-left: 45px;
     margin-top: 40px;
     border-radius: 10px;
+    position: relative;
+    flex-direction: row;
+    display: flex;
 }
 
 #middlebox{
@@ -82,6 +96,9 @@ button{
     margin-left: 45px;
     margin-top: 40px;
     border-radius: 10px;
+    position: relative;
+    flex-direction: row;
+    display: flex;
 }
 
 #bottombox{
@@ -92,12 +109,17 @@ button{
     margin-left: 45px;
     margin-top: 40px;
     border-radius: 10px;
+    position: relative;
+    flex-direction: row;
+    display: flex;
 }
 
 #heart {
-    padding: 2%;
     position: absolute;
     width: 5%;
+    bottom: 0;
+    right: 0;
+    padding-right: 4%;
 }
 
 #gear {
@@ -109,10 +131,65 @@ button{
 
 select{
     text-align: center;
-    margin-top: 2%;
-    margin-left: 25%;
+    margin-top: 5%;
+    margin-left: 21%;
     padding: 2%;
     font-size: 100%;
     font-family: serif;
     width: 400px;
+    border-radius: 15px;
+}
+
+.picBox1{
+    width: 170px;
+    height: 170px;
+    margin: 15px;
+    border-radius: 10px;
+    background-image: url(eat.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.picBox2{
+    width: 170px;
+    height: 170px;
+    margin: 15px;
+    border-radius: 10px;
+    background-image: url(hiking.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.picBox3{
+    width: 170px;
+    height: 170px;
+    margin: 15px;
+    border-radius: 10px;
+    background-image: url(hotel.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#rightInfo{
+    font-family: serif;
+    font-size: 50px;
+    align-content: center;
+    padding-left: 50px;
+}
+
+#middleInfo{
+    font-family: serif;
+    font-size: 50px;
+    align-content: center;
+    padding-left: 30px;
+}
+
+#topInfo{
+    font-family: serif;
+    font-size: 50px;
+    align-content: center;
+    padding-left: 50px;
 }

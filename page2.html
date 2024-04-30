@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" style="overflow: hidden;">
     <head>
         <meta charset="UTF-8">
         <title>Page Two</title>
         <link rel="stylesheet" href="./style.css">
+        <script src="index2.js"></script>
     </head>
     <body>
         <div class="sides">
             <div class="leftside">
-                <div id = "heart">
-                    <img style='width: 150%' src="heart.png" alt ="">
-                </div>
                 <label for="Location":></label>
                 <select name="Location" id="Location">
-                    <option value="Where">Where to...</option>
-                    <option value="Bangalore">Bangalore</option>
+                    <option value="Home">Where to...</option>
                     <option value="Barcelona">Barcelona</option>
                     <option value="Berlin">Berlin</option>
                     <option value="Dallas">Dallas</option>
@@ -24,18 +21,33 @@
                     <option value="San Francisco">San Francisco</option>
                 </select>
                 <div id = "gear">
-                    <img style='width: 150%' src="gear.png" alt ="">
+                    <a href="user.html"><img src="icons/gear.png" alt="" style="width:150%"></a>
                 </div>
             </div>
             <div class="rightside">
                 <div id="topbox">
-                    <p>item 1</p>
+                    <div class="picBox1">
+                        <div class = "dine"></div>
+                    </div>
+                    <div id="topInfo">
+                        Dine with Us!
+                    </div>
                 </div>
                 <div id="middlebox">
-                    <p>item 2</p>
+                    <div class="picBox2">
+                        <div class = "explore"></div>
+                    </div>
+                    <div id="middleInfo">
+                        <p>Explore with Us!</p>
+                    </div>
                 </div>
                 <div id="bottombox">
-                    <p>item 3</p>
+                    <div class="picBox3">
+                        <div class = "stay"></div>
+                    </div>
+                    <div id="rightInfo">
+                        <p>Stay with Us!</p>
+                    </div>
                 </div>
             </div>
     </div>
