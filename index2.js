@@ -25,6 +25,38 @@ document.addEventListener("DOMContentLoaded", async function() {
                     top_div.innerHTML = "";
                     mid_div.innerHTML = "";
                     bottom_div.innerHTML = "";
+
+                    
+                    let pic1 = document.createElement("div");
+                    let pic2 = document.createElement("div");
+                    let pic3 = document.createElement("div");
+
+                    pic1.style.height = '170px';
+                        pic1.style.width = '170px';
+                        pic1.style.margin = '15px';
+                        pic1.style.borderRadius = '10px';
+                        pic1.style.backgroundImage = "url(activities/barcelona/medFeast.jpg)";
+                        pic1.style.backgroundSize = 'cover';
+                        pic1.style.backgroundRepeat = 'no-repeats';
+                        pic1.style.backgroundPosition = 'center';
+
+                        pic2.style.height = '170px';
+                        pic2.style.width = '170px';
+                        pic2.style.margin = '15px';
+                        pic2.style.borderRadius = '10px';
+                        pic2.style.backgroundImage = "url(activities/barcelona/bWineTasting.jpg)";
+                        pic2.style.backgroundSize = 'cover';
+                        pic2.style.backgroundRepeat = 'no-repeats';
+                        pic2.style.backgroundPosition = 'center';
+
+                        pic3.style.height = '170px';
+                        pic3.style.width = '170px';
+                        pic3.style.margin = '15px';
+                        pic3.style.borderRadius = '10px';
+                        pic3.style.backgroundImage = "url(activities/barcelona/tapas.jpg)";
+                        pic3.style.backgroundSize = 'cover';
+                        pic3.style.backgroundRepeat = 'no-repeats';
+                        pic3.style.backgroundPosition = 'center';
     
                     // Iterate through the first three activities and populate the divs
                     for (let i = 0; i < 3; i++) {
@@ -36,9 +68,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                         let activityBookingLink = document.createElement("a");
                         let heartIcon = document.createElement("img");
                         let picContainer = document.createElement("div");
-                        let pic1 = document.createElement("div");
-                        let pic2 = document.createElement("div");
-                        let pic3 = document.createElement("div");
+                        
                         
                         // .picBox1{
                         //     width: 170px;
@@ -60,13 +90,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                         activityName.textContent = activity.name;
 
                         // Add Pictures
-                        pic1.style.height = '170px';
-                        pic1.style.width = '170px';
-                        pic1.style.margin = '15px';
-                        pic1.style.borderRadius = '10px';
-                        // pic1.style.backgroundImage = '170px';
-                        // pic1.style.height = '170px';
-                        // pic1.style.height = '170px';
+                        
 
 
 
@@ -80,26 +104,35 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.position = "absolute";
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
-
+                    
                         activityBookingLink.style.textDecoration = 'none';
                         activityBookingLink.style.color= 'grey';
     
                         
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
                         activityDiv.appendChild(activityBookingLink);
 
+                        
+
                        // activityDiv.style.textAlign = 'center';
     
                         // Determine which div to append the activity to
                         if (i === 0) {
+                            picContainer.appendChild(pic1);
                             top_div.appendChild(picContainer);
                             top_div.appendChild(activityDiv);
                         } else if (i === 1) {
+                            picContainer.appendChild(pic2);
                             mid_div.appendChild(picContainer);
                             mid_div.appendChild(activityDiv);
                         } else {
+                            picContainer.appendChild(pic3);
                             bottom_div.appendChild(picContainer);
                             bottom_div.appendChild(activityDiv);
                         }
@@ -156,6 +189,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -219,6 +256,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -282,6 +323,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -345,6 +390,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -408,6 +457,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -471,6 +524,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -501,7 +558,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                 let response = await fetch('http://localhost:3000/tours?latitude=37.810980&longitude=-122.483716&radius=5');
                 let jsonData = await response.json();
     
-                // Filter data to include only objects with name, rating, and bookingLink
+                // Filter data to include only objects with name and bookingLink
                 let filteredData = jsonData.data.filter(activity => 
                     activity.name && activity.bookingLink
                 );
@@ -534,6 +591,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
     
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -564,3 +625,31 @@ document.addEventListener("DOMContentLoaded", async function() {
         }
     });       
 });
+
+async function addToFavorites(attraction) {
+    try {
+        let userId = localStorage.getItem('userId');
+        // Send a POST request to your backend to add the attraction to favorites
+        const response = await fetch('http://localhost:3000/favorites', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                latitude: attraction.latitude,
+                ongitude: attraction.longitude, 
+                activityId: attraction.id,
+                userId: userId 
+            })
+        });
+        
+        // Check if the request was successful
+        if (response.ok) {
+            console.log('Attraction added to favorites successfully.');
+        } else {
+            console.error('Error adding attraction to favorites:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error adding attraction to favorites:', error);
+    }
+}

@@ -50,7 +50,7 @@ img{
     padding-top: 100%;
 }
 
-#favCard{
+.favCard{
     width: 90%;
     height: 45%;
     border-radius: 15px;
