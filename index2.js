@@ -46,7 +46,11 @@ document.addEventListener("DOMContentLoaded", async function() {
                         heartIcon.style.position = "absolute";
                         heartIcon.style.bottom = "0";
                         heartIcon.style.right = "0";
-    
+                        
+                        heartIcon.addEventListener("click", () => {
+                            addToFavorites(activity);
+                        });
+
                         // Append elements to activityDiv
                         activityDiv.appendChild(heartIcon);
                         activityDiv.appendChild(activityName);
@@ -518,3 +522,31 @@ document.addEventListener("DOMContentLoaded", async function() {
         }
     });       
 });
+
+async function addToFavorites(attraction) {
+    try {
+        let userId = localStorage.getItem('userId');
+        // Send a POST request to your backend to add the attraction to favorites
+        const response = await fetch('http://localhost:3000/favorites', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                attraction_location: attraction.location,
+                attraction_latitude: attraction.latitude,
+                attraction_longitude: attraction.longitude, 
+                userId: userId 
+            })
+        });
+        
+        // Check if the request was successful
+        if (response.ok) {
+            console.log('Attraction added to favorites successfully.');
+        } else {
+            console.error('Error adding attraction to favorites:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error adding attraction to favorites:', error);
+    }
+}

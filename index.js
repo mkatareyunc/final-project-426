@@ -20,11 +20,15 @@ loginBtn.addEventListener("click", () => {
     .then(response => {
         if (response.ok) {
             // Redirect or show success message
-            console.log("Login successful");
+            return response.json();
         } else {
             // Handle login failure
             console.error("Login failed");
         }
+    })
+    .then(data => {
+        //store userid in local storage
+        localStorage.setItem('userId', data.userId);
     })
     .catch(error => {
         console.error("Error:", error);

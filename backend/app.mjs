@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import axios from 'axios';
-// import { db } from './db.mjs';
+import { db } from './db.mjs';
 
 
 const app = express();
@@ -32,8 +32,38 @@ app.get('/tours', async(req, res) => {
     }
 });
 
-app.post('/user', async(req, res) => {
-    
+app.post('/favorites', async(req, res) => {
+    let userId = req.body.userId;
+    let location = req.body.location;
+    let latitude = req.body.latitude;
+    let longitude = req.body.longitude;
+
+    try {
+        // Insert association data into the database
+        let favLength = await db.all('SELECT * FROM user_favorites WHERE user_id = ?', userId);
+        if(favLength.length >= 6){
+            return;
+        }
+        await db.run('INSERT INTO user_favorites (user_id, location, latitude, longitude) VALUES (?, ?, ?, ?)', userId, location, latitude, longitude);
+
+        res.status(201).send('Attraction associated with user successfully');
+    } catch (error) {
+        console.error('Error associating attraction with user:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+app.get('/favorites', async(req, res) => {
+    //Information to be retrieved from the user_favorite table
+    let userId = req.query.userId;
+    try {
+        // Retrieve user favorites from the database
+        const favorites = await db.all('SELECT * FROM user_favorites WHERE user_id = ?', userId);
+        res.json(favorites);
+    } catch (error) {
+        console.error('Error retrieving user favorites:', error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
 //This function is to retrieve user access token from Amadeus API
@@ -90,7 +120,7 @@ app.post('/login', async (req, res) => {
             return res.status(401).send('Invalid username or password');
         }
 
-        res.status(200).send('Login successful');
+        res.status(200).json({userId: user.id});
     } catch (error) {
         console.error('Error during login:', error);
         res.status(500).send('Internal Server Error');
