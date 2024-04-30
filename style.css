@@ -59,10 +59,12 @@ button{
     display: inline-block;
     height: 780px;
     width: 690px;
-    background-image: url(berlin.jpg);
+    background-image: url(default.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .rightside{
@@ -81,6 +83,8 @@ button{
     margin-top: 40px;
     border-radius: 10px;
     position: relative;
+    flex-direction: row;
+    display: flex;
 }
 
 #middlebox{
@@ -92,6 +96,8 @@ button{
     margin-top: 40px;
     border-radius: 10px;
     position: relative;
+    flex-direction: row;
+    display: flex;
 }
 
 #bottombox{
@@ -103,6 +109,8 @@ button{
     margin-top: 40px;
     border-radius: 10px;
     position: relative;
+    flex-direction: row;
+    display: flex;
 }
 
 #heart {
@@ -122,18 +130,65 @@ button{
 
 select{
     text-align: center;
-    margin-top: 2%;
-    margin-left: 25%;
+    margin-top: 5%;
+    margin-left: 21%;
     padding: 2%;
     font-size: 100%;
     font-family: serif;
     width: 400px;
+    border-radius: 15px;
 }
 
-.picBox{
-    width: 130px;
-    height: 130px;
-    background-color: blue;
-    border: 1px solid black;
-    margin-left: 2%;
+.picBox1{
+    width: 170px;
+    height: 170px;
+    margin: 2.25%;
+    border-radius: 10px;
+    background-image: url(eat.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.picBox2{
+    width: 170px;
+    height: 170px;
+    margin: 2.25%;
+    border-radius: 10px;
+    background-image: url(hiking.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.picBox3{
+    width: 170px;
+    height: 170px;
+    margin: 2.25%;
+    border-radius: 10px;
+    background-image: url(hotel.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#rightInfo{
+    font-family: serif;
+    font-size: 50px;
+    align-content: center;
+    padding-left: 50px;
+}
+
+#middleInfo{
+    font-family: serif;
+    font-size: 50px;
+    align-content: center;
+    padding-left: 30px;
+}
+
+#topInfo{
+    font-family: serif;
+    font-size: 50px;
+    align-content: center;
+    padding-left: 50px;
 }
