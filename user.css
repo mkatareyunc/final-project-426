@@ -3,15 +3,31 @@ html, body {
     margin: 0;
 }
 
-#container {
+.container {
     height: 100%;
     background-color: navy;
+    display: flex;
+    flex-direction: row;
 }
 
-#sidebar {
+.sidebar {
     background-color: white;
     width: 25%;
     height: 100%;
+    display: inline-block;
+}
+
+.right {
+    background-color: navy;
+    width: 75%;
+    height: 100%;
+    display: inline-block;
+}
+
+.favContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 img{
@@ -28,4 +44,53 @@ img{
     text-align: center;
     color: navy;
     font-size: 20px;
+}
+
+p:hover{
+    background-color: lightgray;
+}
+#clickables {
+    padding-top: 100%;
+}
+
+#favCard{
+    width: 90%;
+    height: 45%;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightCards {
+    width: 32%;
+    height: 100%;
+    display: inline-block;
+}
+
+.middleCards {
+    width: 32%;
+    height: 100%;
+    display: inline-block;
+
+}
+
+.leftCards {
+    width: 32%;
+    height: 100%;
+    display: inline-block;
+    margin-top: 3%;
+}
+
+button {
+    background-color: white;
+    border: 0px;
+    border-radius: 15px;
+    height: 100%
+}
+
+button:hover{
+    background-color: lightgray;
 }
