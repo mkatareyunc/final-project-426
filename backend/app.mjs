@@ -73,6 +73,18 @@ app.get('/favorites', async(req, res) => {
     }
 });
 
+app.delete('/favorites', async(req, res) => {
+    let userId = req.body.userId;
+    let activityId = req.body.activityId;
+    try {
+        await db.run('DELETE FROM user_favorites WHERE user_id = ? AND activity_id = ?', userId, activityId);
+        res.status(200).send('Favorite deleted successfully');
+    } catch (error) {
+        console.error('Error deleting favorite:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 //This function is to retrieve user access token from Amadeus API
 async function getAccessToken() {
     try {
@@ -105,9 +117,9 @@ app.post('/register', async (req, res) => {
         }
 
         // Insert the user into the users table
-        await db.run('INSERT INTO users (username, password) VALUES (?, ?)', username, password);
+        let new_user = await db.run('INSERT INTO users (username, password) VALUES (?, ?)', username, password);
 
-        res.status(201).send('Account created successfully');
+        res.status(200).json({userId: new_user.id, username: new_user.username})
     } catch (error) {
         console.error('Error creating account:', error);
         res.status(500).send('Internal Server Error');

@@ -32,11 +32,38 @@ function populateFavorites(favorites) {
             <p>Location: ${favorite.location}</p>
             <br>
             <img src="${favorite.city_pic}" alt="City Image" style="width:60%">
+            <br>
+            <img src="icons/trash-can-icon-28675.png" alt="Delete" style="width:20%" onclick="deleteFav(${favorite.activity_id})">
             `
         }
     });
 }
 
+async function deleteFav(activity_id, userId= localStorage.getItem('userId')){
+    try{
+        const response = await fetch('http://localhost:3000/favorites', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ activityId: activity_id, userId: userId })
+        });
+        if (response.ok) {
+            window.location.reload();
+        }else{
+            console.error('Error deleting favorite:', response.statusText);
+        }
+    }catch(e){
+        console.error('Error deleting favorite:', response.statusText);
+    }
+}
+
+function logout(){
+    localStorage.clear();
+    window.location.assign('home.html');
+}
+let logoutBtn = document.getElementById('logoutBtn');
+logoutBtn.addEventListener('click', logout);
 
 // Call the functions when the page loads
 window.addEventListener('DOMContentLoaded', () => {
