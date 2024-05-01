@@ -117,9 +117,11 @@ app.post('/register', async (req, res) => {
         }
 
         // Insert the user into the users table
-        let new_user = await db.run('INSERT INTO users (username, password) VALUES (?, ?)', username, password);
+        await db.run('INSERT INTO users (username, password) VALUES (?, ?)', username, password);
 
-        res.status(200).json({userId: new_user.id, username: new_user.username})
+        let new_user = await db.get('SELECT * FROM users WHERE username = ?', username);
+
+        res.status(200).json({userId: new_user.id, username: new_user.username});
     } catch (error) {
         console.error('Error creating account:', error);
         res.status(500).send('Internal Server Error');

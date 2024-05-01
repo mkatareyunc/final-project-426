@@ -16,8 +16,11 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                 // Filter data to include only objects with name, rating, and bookingLink
                 let filteredData = jsonData.data.filter(activity => 
-                    activity.name && activity.bookingLink
+                    activity.id == 6378340 || activity.id == 6379109 || activity.id == 6379111
                 );
+                // Sort filtered data by number in ascending order
+                filteredData.sort((a, b) => a.id - b.id);
+                //6378340(med) 1st ,6379109(wine) 2nd, (6379111)tapas 3rd
 
                 // Check if filtered data is available
                 if (filteredData && filteredData.length >= 3) {
@@ -139,8 +142,11 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                 // Filter data to include only objects with name, rating, and bookingLink
                 let filteredData = jsonData.data.filter(activity => 
-                    activity.name && activity.bookingLink
+                    activity.id == 7145 || activity.id == 6378382 || activity.id == 6379152
                 );
+                filteredData.sort((a, b) => a.id - b.id);
+
+                //bike tour (7145) 1st, hightea (6379152) 3rd , white truffel (6378382) 2nd
 
                 // Check if filtered data is available
                 if (filteredData && filteredData.length >= 3) {
@@ -256,8 +262,12 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                 // Filter data to include only objects with name, rating, and bookingLink
                 let filteredData = jsonData.data.filter(activity => 
-                    activity.name && activity.bookingLink
+                    activity.id == 3889687 || activity.id == 3882766 || activity.id == 3934711
                 );
+
+                //sporting club(3889687)3rd, maple landing (3882766) 2nd, atipico (3934711) 1st
+                // Sort filtered data by number in ascending order
+                filteredData.sort((a, b) => b.id - a.id);
 
                 // Check if filtered data is available
                 if (filteredData && filteredData.length >= 3) {
@@ -274,24 +284,24 @@ document.addEventListener("DOMContentLoaded", async function() {
                         pic1.style.margin = '15px';
                         pic1.style.borderRadius = '10px';
                         pic1.style.backgroundImage = "url(activities/dallas/Atipico.jpg)";
+                        
                         pic1.style.backgroundSize = 'cover';
                         pic1.style.backgroundRepeat = 'no-repeats';
                         pic1.style.backgroundPosition = 'center';
-
+                        pic3.style.backgroundImage = "url(activities/dallas/mapleLanding.jpg)";
                         pic2.style.height = '170px';
                         pic2.style.width = '170px';
                         pic2.style.margin = '15px';
                         pic2.style.borderRadius = '10px';
-                        pic2.style.backgroundImage = "url(activities/dallas/mapleLanding.jpg)";
+                        
                         pic2.style.backgroundSize = 'cover';
                         pic2.style.backgroundRepeat = 'no-repeats';
                         pic2.style.backgroundPosition = 'center';
-
                         pic3.style.height = '170px';
                         pic3.style.width = '170px';
                         pic3.style.margin = '15px';
                         pic3.style.borderRadius = '10px';
-                        pic3.style.backgroundImage = "url(activities/dallas/sportsClubD.jpg)";
+                        pic2.style.backgroundImage = "url(activities/dallas/sportsClubD.jpg)";
                         pic3.style.backgroundSize = 'cover';
                         pic3.style.backgroundRepeat = 'no-repeats';
                         pic3.style.backgroundPosition = 'center';
@@ -372,8 +382,11 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                 // Filter data to include only objects with name, rating, and bookingLink
                 let filteredData = jsonData.data.filter(activity => 
-                    activity.name && activity.bookingLink
+                    activity.id == 6378975 || activity.id == 6379424 || activity.id == 6378986
                 );
+
+                filteredData.sort((a, b) => a.id - b.id);
+                //bush market (6378975), canal boat (6379424), food market (6378986)
 
                 // Check if filtered data is available
                 if (filteredData && filteredData.length >= 3) {
@@ -399,7 +412,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                         pic2.style.width = '170px';
                         pic2.style.margin = '15px';
                         pic2.style.borderRadius = '10px';
-                        pic2.style.backgroundImage = "url(activities/london/canalBoat.jpg)";
+                        pic3.style.backgroundImage = "url(activities/london/canalBoat.jpg)";
                         pic2.style.backgroundSize = 'cover';
                         pic2.style.backgroundRepeat = 'no-repeats';
                         pic2.style.backgroundPosition = 'center';
@@ -408,7 +421,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                         pic3.style.width = '170px';
                         pic3.style.margin = '15px';
                         pic3.style.borderRadius = '10px';
-                        pic3.style.backgroundImage = "url(activities/london/Foodmarket.jpg)";
+                        pic2.style.backgroundImage = "url(activities/london/Foodmarket.jpg)";
                         pic3.style.backgroundSize = 'cover';
                         pic3.style.backgroundRepeat = 'no-repeats';
                         pic3.style.backgroundPosition = 'center';
@@ -489,9 +502,10 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                 // Filter data to include only objects with name, rating, and bookingLink
                 let filteredData = jsonData.data.filter(activity => 
-                    activity.name && activity.bookingLink
+                    activity.id == 3904457 || activity.id == 3935551 || activity.id == 3889676
                 );
-
+                //giannas (3904457), manchengo (3935551), snowglobe (3889676)
+                filteredData.sort((a, b) => a.id - b.id);
                 // Check if filtered data is available
                 if (filteredData && filteredData.length >= 3) {
                     // Clear previous content
@@ -507,7 +521,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                         pic1.style.width = '170px';
                         pic1.style.margin = '15px';
                         pic1.style.borderRadius = '10px';
-                        pic1.style.backgroundImage = "url(activities/new_york/giannas.jpg)";
+                        pic2.style.backgroundImage = "url(activities/new_york/giannas.jpg)";
                         pic1.style.backgroundSize = 'cover';
                         pic1.style.backgroundRepeat = 'no-repeats';
                         pic1.style.backgroundPosition = 'center';
@@ -516,7 +530,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                         pic2.style.width = '170px';
                         pic2.style.margin = '15px';
                         pic2.style.borderRadius = '10px';
-                        pic2.style.backgroundImage = "url(activities/new_york/manchengo.jpg)";
+                        pic3.style.backgroundImage = "url(activities/new_york/manchengo.jpg)";
                         pic2.style.backgroundSize = 'cover';
                         pic2.style.backgroundRepeat = 'no-repeats';
                         pic2.style.backgroundPosition = 'center';
@@ -525,7 +539,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                         pic3.style.width = '170px';
                         pic3.style.margin = '15px';
                         pic3.style.borderRadius = '10px';
-                        pic3.style.backgroundImage = "url(activities/new_york/snowGlobe.jpg)";
+                        pic1.style.backgroundImage = "url(activities/new_york/snowGlobe.jpg)";
                         pic3.style.backgroundSize = 'cover';
                         pic3.style.backgroundRepeat = 'no-repeats';
                         pic3.style.backgroundPosition = 'center';
@@ -606,8 +620,11 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                 // Filter data to include only objects with name, rating, and bookingLink
                 let filteredData = jsonData.data.filter(activity => 
-                    activity.name && activity.bookingLink
+                    activity.id == 1747853 || activity.id == 1747856 || activity.id == 3839961
                 );
+
+                filteredData.sort((a, b) => a.id - b.id);
+                //beer bike (1747853), bike tour (1747856), defense (3839961)
 
                 // Check if filtered data is available
                 if (filteredData && filteredData.length >= 3) {
@@ -723,9 +740,12 @@ document.addEventListener("DOMContentLoaded", async function() {
     
                 // Filter data to include only objects with name and bookingLink
                 let filteredData = jsonData.data.filter(activity => 
-                    activity.name && activity.bookingLink
+                    activity.id == 3908226 || activity.id == 3836619 || activity.id == 3852638
                 );
 
+                filteredData.sort((a, b) => a.id - b.id);
+
+                //camp bbq(3908226) , greens(3836619), sessions(3852638)
                 // Check if filtered data is available
                 if (filteredData && filteredData.length >= 3) {
                     // Clear previous content
@@ -741,7 +761,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                         pic1.style.width = '170px';
                         pic1.style.margin = '15px';
                         pic1.style.borderRadius = '10px';
-                        pic1.style.backgroundImage = "url(activities/san_fransico/BBQ.jpg)";
+                        pic3.style.backgroundImage = "url(activities/san_fransico/BBQ.jpg)";
                         pic1.style.backgroundSize = 'cover';
                         pic1.style.backgroundRepeat = 'no-repeats';
                         pic1.style.backgroundPosition = 'center';
@@ -750,7 +770,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                         pic2.style.width = '170px';
                         pic2.style.margin = '15px';
                         pic2.style.borderRadius = '10px';
-                        pic2.style.backgroundImage = "url(activities/san_fransico/greens.jpg)";
+                        pic1.style.backgroundImage = "url(activities/san_fransico/greens.jpg)";
                         pic2.style.backgroundSize = 'cover';
                         pic2.style.backgroundRepeat = 'no-repeats';
                         pic2.style.backgroundPosition = 'center';
@@ -759,7 +779,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                         pic3.style.width = '170px';
                         pic3.style.margin = '15px';
                         pic3.style.borderRadius = '10px';
-                        pic3.style.backgroundImage = "url(activities/san_fransico/sessions.jpg)";
+                        pic2.style.backgroundImage = "url(activities/san_fransico/sessions.jpg)";
                         pic3.style.backgroundSize = 'cover';
                         pic3.style.backgroundRepeat = 'no-repeats';
                         pic3.style.backgroundPosition = 'center';

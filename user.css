@@ -59,6 +59,7 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .rightCards {
@@ -95,4 +96,16 @@ button:hover{
 a{
     text-decoration: none;
     color: navy
+}
+
+a:hover{
+    background-color: lightgray;
+    border-radius: 15px;
+    border-width: 30px;
+}
+
+#logoutBtn{
+    color: navy;
+    font-family: serif;
+    font-size: 20px;
 }
