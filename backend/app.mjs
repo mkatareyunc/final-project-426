@@ -35,8 +35,9 @@ app.get('/tours', async(req, res) => {
 app.post('/favorites', async(req, res) => {
     let userId = req.body.userId;
     let activityId = req.body.activityId;
-    let latitude = req.body.latitude;
-    let longitude = req.body.longitude;
+    let location = req.body.location;
+    let activityName = req.body.activityName;
+    let city_pic = req.body.city_pic;
 
     try {
         // Check if the activity already exists for the user
@@ -50,7 +51,7 @@ app.post('/favorites', async(req, res) => {
         if(favLength.length >= 6){
             return res.status(400).send('User already has maximum number of favorites');
         }
-        await db.run('INSERT INTO user_favorites (user_id, latitude, longitude, activity_id) VALUES (?, ?, ?, ?)', userId, latitude, longitude, activityId);
+        await db.run('INSERT INTO user_favorites (user_id, location, activity_id, activityName, city_pic) VALUES (?, ?, ?, ?, ?)', userId, location, activityId, activityName, city_pic);
 
         res.status(201).send('Attraction associated with user successfully');
     } catch (error) {
@@ -68,6 +69,18 @@ app.get('/favorites', async(req, res) => {
         res.json(favorites);
     } catch (error) {
         console.error('Error retrieving user favorites:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+app.delete('/favorites', async(req, res) => {
+    let userId = req.body.userId;
+    let activityId = req.body.activityId;
+    try {
+        await db.run('DELETE FROM user_favorites WHERE user_id = ? AND activity_id = ?', userId, activityId);
+        res.status(200).send('Favorite deleted successfully');
+    } catch (error) {
+        console.error('Error deleting favorite:', error);
         res.status(500).send('Internal Server Error');
     }
 });
@@ -106,7 +119,9 @@ app.post('/register', async (req, res) => {
         // Insert the user into the users table
         await db.run('INSERT INTO users (username, password) VALUES (?, ?)', username, password);
 
-        res.status(201).send('Account created successfully');
+        let new_user = await db.get('SELECT * FROM users WHERE username = ?', username);
+
+        res.status(200).json({userId: new_user.id, username: new_user.username});
     } catch (error) {
         console.error('Error creating account:', error);
         res.status(500).send('Internal Server Error');
